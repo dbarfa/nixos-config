@@ -13,7 +13,7 @@
   users.users.dbarfa = {
     isNormalUser = true;
     description = "dbarfa";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [
       firefox
       kate

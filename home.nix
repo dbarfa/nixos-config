@@ -35,7 +35,7 @@
 
     neofetch
     nnn # terminal file manager
-
+    stremio
     # utils
     ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
@@ -59,6 +59,8 @@
     lm_sensors # for `sensors` command
     pciutils # lspci
     usbutils # lsusb
+    discord
+    obsidian
   ];
 
   # starship - an customizable prompt for any shell
