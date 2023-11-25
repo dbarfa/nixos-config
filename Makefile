@@ -1,4 +1,5 @@
 # nix-shell -p gnumake --command "make {target}"
+# Ctrl+R "gnumake" to easily construct nix-shell
 
 _NAME = $(shell whoami)
 

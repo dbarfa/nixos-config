@@ -26,7 +26,6 @@
     in {
       nixosConfigurations = (
         import ./hosts {
-          inherit (nixpkgs) lib;
           inherit inputs nixpkgs home-manager vars;
       });
     };
