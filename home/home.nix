@@ -56,6 +56,7 @@
     # set some aliases, feel free to add more or remove some
     shellAliases = {
       aliasExample = "echo $DISPLAY";
+      lg = "lazygit";
     };
   };
 
