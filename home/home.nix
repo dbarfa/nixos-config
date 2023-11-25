@@ -11,6 +11,7 @@
     nnn
     bat
     tmux
+    htop
 
     file
     which
