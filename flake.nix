@@ -19,26 +19,15 @@
     ];
   };
 
-   outputs = { 
-	self, 
-	nixpkgs,
-	home-manager,
-	... }@inputs: {
-    nixosConfigurations = {
-      dbarfa = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = inputs;
-        modules = [
-          ./configuration.nix
-	  home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
 
-            home-manager.users.dbarfa = import ./home.nix;
-          }
-        ];
-      };
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+    let
+      vars = { user = "dbarfa"; };
+    in {
+      nixosConfigurations = (
+        import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager vars;
+      });
     };
-  };
 }
