@@ -1,5 +1,5 @@
 {
-  description = "atsea's NixOS Flake";
+  description = "dbarfa's NixOS Flake";
   
 
   inputs = {
@@ -33,7 +33,7 @@
 	home-manager,
 	... }@inputs: {
     nixosConfigurations = {
-      atsea = nixpkgs.lib.nixosSystem {
+      dbarfa = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	specialArgs = inputs;
         modules = [
@@ -43,7 +43,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.atsea = import ./home.nix;
+            home-manager.users.dbarfa = import ./home.nix;
           }
         ];
       };

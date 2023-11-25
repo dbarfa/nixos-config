@@ -10,9 +10,9 @@
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
 
-  users.users.atsea = {
+  users.users.dbarfa = {
     isNormalUser = true;
-    description = "atsea";
+    description = "dbarfa";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
@@ -44,7 +44,7 @@
 	
   time.hardwareClockInLocalTime = true;
 
-  networking.hostName = "atsea"; # Define your hostname.
+  networking.hostName = "dbarfa"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
