@@ -1,20 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [       
-    	./desktop/hardware-configuration.nix
-    ];
+  imports = [ ./desktop/hardware-configuration.nix ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config = { allowUnfree = true; };
 
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-  };
+  nix = { settings = { experimental-features = [ "nix-command" "flakes" ]; }; };
   hardware = {
     bluetooth = {
       enable = true;
@@ -28,7 +19,7 @@
     #shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
-  
+
   #maybe move this to hm?
   environment.systemPackages = with pkgs; [
     git
@@ -37,12 +28,13 @@
     curl
     dig
     zsh
+    cowsay
   ];
 
   environment.variables.EDITOR = "nvim";
 
   networking.networkmanager.enable = true;
-  networking.hostName = "dbarfa"; 
+  networking.hostName = "dbarfa";
 
   time.timeZone = "Europe/Brussels";
   time.hardwareClockInLocalTime = true;
@@ -77,24 +69,24 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
 
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-		
+
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  
+
   boot = {
     loader = {
-	systemd-boot.enable = true;
-	efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
     };
-    initrd.kernelModules = ["nvidia"];
+    initrd.kernelModules = [ "nvidia" ];
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   };
 

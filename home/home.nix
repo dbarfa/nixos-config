@@ -5,14 +5,15 @@
   home.homeDirectory = "/home/dbarfa";
 
   home.packages = with pkgs; [
-    ripgrep 
-    jq 
+    ripgrep
+    jq
     fzf
     nnn
     bat
     tmux
     htop
     mpv
+    eza
 
     file
     which
@@ -22,9 +23,9 @@
     nix-output-monitor
 
     sysstat
-    lm_sensors 
-    pciutils 
-    usbutils 
+    lm_sensors
+    pciutils
+    usbutils
 
     firefox
     discord
@@ -42,7 +43,7 @@
     EDITOR = "nvim";
   };
 
- programs.git = {
+  programs.git = {
     enable = true;
     userName = "dbarfa";
     userEmail = "contact@dbarfa.com";
@@ -59,6 +60,8 @@
     shellAliases = {
       aliasExample = "echo $DISPLAY";
       lg = "lazygit";
+      ls = "eza";
+      cat = "bat";
     };
   };
 

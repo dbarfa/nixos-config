@@ -1,32 +1,46 @@
 {
   description = "dbarfa's NixOS Flake";
-  
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-	url = "github:nix-community/home-manager";
-	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
+    extra-substituters = "https://nix-community.cachix.org";
+    extra-trusted-public-keys =
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
   };
 
-
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
+      inherit (self) outputs;
       vars = { user = "dbarfa"; };
+      system = "x86_64_linux";
+
     in {
-      nixosConfigurations = (
-        import ./hosts {
-          inherit inputs nixpkgs home-manager vars;
-      });
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+
+      nixosConfigurations = {
+        ${vars.user} = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                extraSpecialArgs = { inherit inputs outputs; };
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${vars.user} = { imports = [ ./home/home.nix ]; };
+              };
+            }
+          ];
+        };
+      };
     };
 }
