@@ -13,23 +13,19 @@
     };
   };
 
+  environment.localBinInPath = true;
+
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
   users.users.dbarfa = {
     isNormalUser = true;
     description = "dbarfa";
-    #shell = pkgs.zsh;
+    shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
 
   #maybe move this to hm?
-  environment.systemPackages = with pkgs; [
-    git
-    wget
-    neovim
-    curl
-    dig
-    zsh
-    cowsay
-  ];
+  environment.systemPackages = with pkgs; [ git wget neovim curl dig ];
 
   environment.variables.EDITOR = "nvim";
 
