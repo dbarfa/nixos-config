@@ -12,6 +12,7 @@
     bat
     tmux
     htop
+    mpv
 
     file
     which
