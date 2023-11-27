@@ -14,6 +14,7 @@
     htop
     mpv
     eza
+    gcc
 
     file
     which
@@ -43,6 +44,12 @@
     LC_CTYPE = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
     EDITOR = "nvim";
+  };
+  
+  programs.neovim = {
+    enable = true;
+    withNodeJs = true;
+    extraConfig = ":luafile ~/nixos/nvim/init.lua";
   };
 
   programs.git = {
