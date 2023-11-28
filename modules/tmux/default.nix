@@ -2,8 +2,14 @@
   programs.tmux = {
     enable = true;
     extraConfig = ''
-set -g default-terminal "screen-256color"
-
+#set -g default-terminal "screen-256color"
+#set -ga terminal-overrides ",*256col*:Tc"
+#set -ga terminal-overrides ',screen-256color:Tc'
+set-option -sa terminal-features ',tmux-256color:RGB'
+set-option -g default-terminal "screen-256color"
+set-option -sa terminal-features ',screen-256color:RGB'
+#set -sg default-terminal tmux-256color
+#set -asg terminal-features ",tmux-256color:256:RGB:mouse:cstyle"
 # this should help with esc in nvim
 set -s escape-time 0
 
