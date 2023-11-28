@@ -11,11 +11,12 @@ in
       plugins = [
         ## Theme
         {
-          plugin =pkgs.vimPlugins.onedark-nvim;
-          config = "vim.cmd[[colorscheme onedark]]";
+          plugin =pkgs.vimPlugins.nord-nvim;
+          config = "vim.cmd[[colorscheme nord]]";
           type = "lua";
         }
 
+        pkgs.vimPlugins.plenary-nvim
         ## Treesitter
         {
           plugin = pkgs.vimPlugins.nvim-treesitter;
@@ -91,7 +92,7 @@ in
             require('lualine').setup {
                 options = {
                     icons_enabled = false,
-                    theme = 'onedark',
+                    theme = 'auto',
                     componene_separators = '|',
                 },
             }

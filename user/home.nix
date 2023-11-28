@@ -22,8 +22,6 @@
     tree
     neofetch
 
-    alacritty
-
     nix-output-monitor
 
     sysstat
