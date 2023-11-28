@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ (import ../modules) ];
   home.username = "dbarfa";
   home.homeDirectory = "/home/dbarfa";
 
@@ -16,6 +17,7 @@
     eza
     gcc
 
+    xclip
     file
     which
     tree
@@ -37,6 +39,16 @@
     gparted
     solaar
     lazygit
+
+    # LSP Servers
+    nodePackages_latest.pyright
+    cmake-language-server
+    nil
+    rust-analyzer
+    ansible-language-server
+    nodePackages_latest.dockerfile-language-server-nodejs
+    nodePackages.vim-language-server
+    lua-language-server
   ];
 
   home.sessionVariables = {
@@ -45,12 +57,12 @@
     LC_ALL = "en_US.UTF-8";
     EDITOR = "nvim";
   };
-  
-  programs.neovim = {
-    enable = true;
-    withNodeJs = true;
-    extraConfig = ":luafile ~/nixos/nvim/init.lua";
-  };
+
+  # programs.neovim = {
+  #   enable = true;
+  #   withNodeJs = true;
+  #   extraConfig = ":luafile ~/nixos/nvim/init.lua";
+  # };
 
   programs.git = {
     enable = true;

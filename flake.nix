@@ -26,7 +26,7 @@
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
       nixosConfigurations = {
-        ${vars.user} = nixpkgs.lib.nixosSystem {
+        dbarfa = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/configuration.nix
