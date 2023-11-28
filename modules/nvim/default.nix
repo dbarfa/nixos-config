@@ -98,13 +98,6 @@ in
           '';
           type = "lua";
         }
-        # {
-        #   plugin = pkgs.vimPlugins.crates-nvim;
-        #   config = "require('crates').setup{}";
-        #   type = "lua";
-        # }
-        # pkgs.vimPlugins.rustaceanvim
-
       ];
         extraConfig = ''
         	let mapleader = "${leaderKey}"
