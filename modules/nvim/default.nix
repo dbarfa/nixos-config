@@ -92,8 +92,9 @@ in
             require('lualine').setup {
                 options = {
                     icons_enabled = false,
-                    theme = 'auto',
-                    componene_separators = '|',
+                    theme = 'onedark',
+                    component_separators = '|',
+                    section_separators = "",
                 },
             }
           '';
