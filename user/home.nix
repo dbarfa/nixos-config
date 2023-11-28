@@ -11,7 +11,6 @@
     fzf
     nnn
     bat
-    tmux
     htop
     mpv
     eza
@@ -58,18 +57,6 @@
     EDITOR = "nvim";
   };
 
-  # programs.neovim = {
-  #   enable = true;
-  #   withNodeJs = true;
-  #   extraConfig = ":luafile ~/nixos/nvim/init.lua";
-  # };
-
-  programs.git = {
-    enable = true;
-    userName = "dbarfa";
-    userEmail = "contact@dbarfa.com";
-  };
-
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -77,20 +64,6 @@
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     '';
 
-    shellAliases = {
-      ga = "git add";
-      gc = "git commit";
-      gp = "git push";
-      gs = "git status";
-
-      lg = "lazygit";
-      ls = "eza";
-      cat = "bat";
-    };
-  };
-
-  programs.fish = {
-    enable = true;
     shellAliases = {
       ga = "git add";
       gc = "git commit";
