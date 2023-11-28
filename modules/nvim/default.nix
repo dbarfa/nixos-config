@@ -11,8 +11,8 @@ in
       plugins = [
         ## Theme
         {
-          plugin =pkgs.vimPlugins.nord-nvim;
-          config = "vim.cmd[[colorscheme nord]]";
+          plugin = pkgs.vimPlugins.onedark-nvim;
+          config = "vim.cmd[[colorscheme onedark]]";
           type = "lua";
         }
 
