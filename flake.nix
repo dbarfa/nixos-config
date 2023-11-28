@@ -20,7 +20,6 @@
     let
       inherit (self) outputs;
       vars = { user = "dbarfa"; };
-      system = "x86_64_linux";
 
     in {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
@@ -29,14 +28,14 @@
         dbarfa = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ./hosts/configuration.nix
+            ./user/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 extraSpecialArgs = { inherit inputs outputs; };
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${vars.user} = { imports = [ ./home/home.nix ]; };
+                users.${vars.user} = { imports = [ ./user/home.nix ]; };
               };
             }
           ];
