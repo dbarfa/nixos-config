@@ -1,6 +1,6 @@
 # nixos-config
 
-Personal NixOS configuration utilizing Nix Flakes and home-manager.
+Personal NixOS configuration utilizing Flakes and home-manager.
 
 ## Structure
 
