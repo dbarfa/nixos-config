@@ -36,7 +36,7 @@
     gparted
     solaar
     lazygit
-
+    steam
     # LSP Servers
     nodePackages_latest.pyright
     cmake-language-server
@@ -83,7 +83,6 @@
       line_break.disabled = true;
     };
   };
-
   home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
