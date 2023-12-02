@@ -16,7 +16,6 @@ in
           type = "lua";
         }
 
-        pkgs.vimPlugins.plenary-nvim
         ## Treesitter
         {
           plugin = pkgs.vimPlugins.nvim-treesitter;
