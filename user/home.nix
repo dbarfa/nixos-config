@@ -23,7 +23,7 @@
     neofetch
 
     nix-output-monitor
-
+    calibre
     sysstat
     lm_sensors
     pciutils
@@ -37,6 +37,8 @@
     solaar
     lazygit
     steam
+    mullvad-vpn
+
     # LSP Servers
     nodePackages_latest.pyright
     cmake-language-server
@@ -73,7 +75,6 @@
       cat = "bat";
     };
   };
-
   programs.starship = {
     enable = true;
     settings = {

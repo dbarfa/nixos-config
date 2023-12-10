@@ -31,6 +31,7 @@
 
   networking.networkmanager.enable = true;
   networking.hostName = "dbarfa";
+  services.mullvad-vpn.enable = true;
 
   time.timeZone = "Europe/Brussels";
   time.hardwareClockInLocalTime = true;
