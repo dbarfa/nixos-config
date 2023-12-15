@@ -39,7 +39,9 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver.enable = true;
-
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
