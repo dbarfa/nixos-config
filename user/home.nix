@@ -38,7 +38,7 @@
     lazygit
     steam
     mullvad-vpn
-
+    path-of-building 
     # LSP Servers
     nodePackages_latest.pyright
     cmake-language-server
