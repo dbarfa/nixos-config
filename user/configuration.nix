@@ -23,6 +23,15 @@
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
+  
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [xdg-desktop-portal-kde];
+    xdgOpenUsePortal = true;
+    wlr = {
+      enable = true;
+    };
+  };
 
   #maybe move this to hm?
   environment.systemPackages = with pkgs; [ git wget neovim curl dig ];
