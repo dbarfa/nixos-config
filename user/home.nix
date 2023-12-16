@@ -15,6 +15,7 @@
     mpv
     eza
     gcc
+    appimage-run
 
     xclip
     file
