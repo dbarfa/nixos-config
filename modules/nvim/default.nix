@@ -40,7 +40,7 @@ in
           type = "lua";
         }
         pkgs.vimPlugins.telescope-fzf-native-nvim
-        pkgs.vimPlugins.harpoon
+        -- pkgs.vimPlugins.harpoon
 
         ## cmp
         {
