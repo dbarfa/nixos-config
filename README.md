@@ -12,16 +12,16 @@ Personal NixOS configuration utilizing Flakes and home-manager.
 
 ----
 ## Installation notes on hypervisor(Hyper-V) WIP
-Download NixOS: https://nixos.org/download.html
-Install/Enable hypervisor(Hyper-V, VMWare, QEMu etc)
-Give VM 8GB RAM, 6 cores+, 100GB+ Disk, Share Network, UEFI
-Boot VM and change password to root
-```
-$ sudo su
-$ passwd
-```
-grab VM ip with `ifconfig` and add it to ssh ip below
-Outside of VM run ssh install command below. on windows run it in Git Bash or WSL.
+* Download NixOS: https://nixos.org/download.html
+* Install/Enable hypervisor(Hyper-V, VMWare, QEMu etc)
+* Give VM 8GB RAM, 6 cores+, 100GB+ Disk, Share Network, UEFI
+* Boot VM and change password to root
+  ```
+  $ sudo su
+  $ passwd
+  ```
+* Grab VM ip with `ifconfig` and add it to ssh ip below
+* Outside of VM run ssh install command below. on windows run it in Git Bash or WSL.
 ```
 ssh -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p22 root@xx.xx.xx.xx " \
   parted /dev/sda -- mklabel gpt; \
