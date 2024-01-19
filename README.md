@@ -11,8 +11,8 @@ Personal NixOS configuration utilizing Flakes and home-manager.
 - `./modules/nvim`: Neovim plugins installed via Nix and managed with Lua.
 
 ----
-## Installation notes on hypervisor(Hyper-V) WIP
-* Download NixOS: https://nixos.org/download.html
+## Installation notes on hypervisor WIP
+* Download minimal NixOS: https://nixos.org/download.html
 * Install/Enable hypervisor(Hyper-V, VMWare, QEMu etc)
 * Give VM 8GB RAM, 6 cores+, 100GB+ Disk, Share Network, UEFI
 * Boot VM and change password to root
@@ -22,6 +22,8 @@ Personal NixOS configuration utilizing Flakes and home-manager.
   ```
 * Grab VM ip with `ifconfig` and add it to ssh ip below
 * Outside of VM run ssh install command below. on windows run it in Git Bash or WSL.
+* without swap the installation might hang.
+* if `/dev/sda` is not available, edit accordingly
 ```
 ssh -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p22 root@xx.xx.xx.xx " \
   parted /dev/sda -- mklabel gpt; \
@@ -50,7 +52,7 @@ ssh -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyC
   nixos-install --no-root-passwd && reboot; \
 "
 ```
-swap is important.
 for more check nixos-help, mitchellh/nixos-config or https://github.com/search?q=language%3ANix+virtualisation.hyperv&type=code 
 
-I'll add the rest later
+
+I'll add the rest later, including cloning repo, symlinks, separation of machines, i3 etc.
