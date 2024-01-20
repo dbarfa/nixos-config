@@ -56,3 +56,11 @@ for more check nixos-help, mitchellh/nixos-config or https://github.com/search?q
 
 
 I'll add the rest later, including cloning repo, symlinks, separation of machines, i3 etc.
+## Troubleshooting
+1. **Issue Description:** `$DISPLAY` is unavailable, preventing the display manager from starting. Running `systemctl status display-manager` results in errors.
+
+   **Solution:** Add the "nomodeset" option to the `configuration.nix` file. This disables kernel mode-setting features, opting for BIOS/UEFI video mode instead.
+
+   ```nix
+   boot.loader.kernelParams = [ "nomodeset" ];
+   ```
