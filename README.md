@@ -66,7 +66,13 @@ I'll add the rest later, including cloning repo, symlinks, separation of machine
    ```
 2. **Issue Description:** `command-not-found` feature is not working, executing commands with typos throws errors like:
    ```bash
+   $ ifconfif
    DBI connect('dbname=/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite','',...) failed:
    unable to open database file at /run/current-system/sw/bin/command-not-found line 13.
+   ```
+   instead of
+   ```bash
+   $ ifconfif
+   ifconfif: command not found 
    ```
    **Solution:** Run `sudo nix-channel --update`, this should update the channel and add the `programs.sqlite` dependency. 
