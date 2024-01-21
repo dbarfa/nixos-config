@@ -64,3 +64,9 @@ I'll add the rest later, including cloning repo, symlinks, separation of machine
    ```nix
    boot.loader.kernelParams = [ "nomodeset" ];
    ```
+2. **Issue Description:** `command-not-found` feature is not working, executing commands with typos throws errors like:
+   ```bash
+   DBI connect('dbname=/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite','',...) failed:
+   unable to open database file at /run/current-system/sw/bin/command-not-found line 13.
+   ```
+   **Solution:** Run `sudo nix-channel --update`, this should update the channel and add the `programs.sqlite` dependency. 
