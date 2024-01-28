@@ -47,20 +47,31 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.xserver.enable = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   services.xserver = {
+    enable = true;
     layout = "us";
+    windowManager = {
+      i3.enable = true;
+    };
+    displayManager = {
+      defaultSession = "none+i3";
+      lightdm.enable = true;
+    };
+    desktopManager = {
+      xterm.enable = false;
+      wallpaper.mode = "fill";
+    };
     xkbVariant = "";
     xkbOptions = "ctrl:nocaps";
   };
 
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -77,25 +88,27 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting.enable = true;
-
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
+  virtualisation.vmware.guest.enable = true;
+  #services.xserver.videoDrivers = [ "vmware" ];
+  #hardware.nvidia = {
+  #  modesetting.enable = true;
+  #
+  #    powerManagement.enable = false;
+  #    powerManagement.finegrained = false;
+  #
+  #    open = false;
+  #    nvidiaSettings = true;
+  #    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  #  };
 
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    initrd.kernelModules = [ "nvidia" ];
+    # initrd.kernelModules = [ "nvidia" ];
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    kernelParams = ["nomodeset"];
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
