@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./desktop/hardware-configuration.nix ];
+  imports = [ ./vmware/hardware-configuration.nix ];
 
   nixpkgs.config = { allowUnfree = true; };
 
@@ -33,14 +33,13 @@
     };
   };
 
-  #maybe move this to hm?
   environment.systemPackages = with pkgs; [ git wget neovim curl dig ];
 
   environment.variables.EDITOR = "nvim";
 
   networking.networkmanager.enable = true;
   networking.hostName = "dbarfa";
-  services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.enable = true;
 
   time.timeZone = "Europe/Brussels";
   time.hardwareClockInLocalTime = true;
@@ -83,13 +82,15 @@
     pulse.enable = true;
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  # hardware.opengl = {
+  #   enable = true;
+  #   driSupport = true;
+  #   driSupport32Bit = true;
+  # };
+
   virtualisation.vmware.guest.enable = true;
-  #services.xserver.videoDrivers = [ "vmware" ];
+
+  #services.xserver.videoDrivers = [ "nvidia" ];
   #hardware.nvidia = {
   #  modesetting.enable = true;
   #
@@ -104,11 +105,9 @@
   boot = {
     loader = {
       systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
     };
-    # initrd.kernelModules = [ "nvidia" ];
-    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-    kernelParams = ["nomodeset"];
+    # remove nomodeset for vmware
+    #kernelParams = ["nomodeset"];
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
