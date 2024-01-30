@@ -23,14 +23,12 @@
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
-  
+
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [xdg-desktop-portal-kde];
+    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
     xdgOpenUsePortal = true;
-    wlr = {
-      enable = true;
-    };
+    wlr = { enable = true; };
   };
 
   environment.systemPackages = with pkgs; [ git wget neovim curl dig ];
@@ -45,18 +43,14 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
   services.xserver = {
     enable = true;
     layout = "us";
-    windowManager = {
-      i3.enable = true;
-    };
+    windowManager = { i3.enable = true; };
     displayManager = {
       defaultSession = "none+i3";
       lightdm.enable = true;
@@ -102,9 +96,7 @@
   #  };
 
   boot = {
-    loader = {
-      systemd-boot.enable = true;
-    };
+    loader = { systemd-boot.enable = true; };
     # remove nomodeset for vmware
     #kernelParams = ["nomodeset"];
   };

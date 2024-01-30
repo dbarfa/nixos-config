@@ -1,8 +1,6 @@
 { pkgs, ... }:
-let 
-  leaderKey = "\\<Space>"; 
-in 
-{
+let leaderKey = "\\<Space>";
+in {
   programs = {
     neovim = {
       enable = true;
@@ -100,10 +98,10 @@ in
           type = "lua";
         }
       ];
-        extraConfig = ''
-        	let mapleader = "${leaderKey}"
-        '';
-        extraLuaConfig = ''
+      extraConfig = ''
+        let mapleader = "${leaderKey}"
+      '';
+      extraLuaConfig = ''
         ${builtins.readFile config/mappings.lua}
         ${builtins.readFile config/options.lua}
       '';

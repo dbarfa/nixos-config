@@ -1,10 +1,8 @@
-{...}: {
+{ ... }: {
   programs.git = {
     enable = true;
     userName = "Daniel-George Barfa";
     userEmail = "contact@dbarfa.com";
-    extraConfig = {
-      safe = { directory = "*"; };
-    };
+    extraConfig = { safe = { directory = "*"; }; };
   };
 }
