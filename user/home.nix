@@ -15,7 +15,6 @@
     mpv
     eza
     gcc
-    appimage-run
 
     xclip
     file
@@ -29,17 +28,8 @@
     lm_sensors
     pciutils
     usbutils
-
-    firefox
-    discord
-    obsidian
-    stremio
-    gparted
-    solaar
     lazygit
-    steam
-    mullvad-vpn
-    path-of-building 
+
     # LSP Servers
     nodePackages_latest.pyright
     cmake-language-server
