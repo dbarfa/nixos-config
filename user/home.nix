@@ -14,7 +14,7 @@
     htop
     mpv
     eza
-    gcc
+    # gcc
 
     xclip
     file
@@ -33,6 +33,8 @@
     # LSP Servers
     nodePackages_latest.pyright
     cmake-language-server
+    clang
+    vimPlugins.clangd_extensions-nvim
     nil
     rust-analyzer
     ansible-language-server
