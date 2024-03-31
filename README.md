@@ -55,7 +55,6 @@ ssh -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyC
 for more check nixos-help, mitchellh/nixos-config or https://github.com/search?q=language%3ANix+virtualisation.hyperv&type=code 
 
 
-I'll add the rest later, including cloning repo, symlinks, separation of machines, i3 etc.
 ## Troubleshooting
 1. **Issue Description:** `$DISPLAY` is unavailable, preventing the display manager from starting. Running `systemctl status display-manager` results in errors.
 
