@@ -23,7 +23,7 @@
     neofetch
 
     nix-output-monitor
-    calibre
+    # calibre
     sysstat
     lm_sensors
     pciutils
@@ -31,7 +31,8 @@
     lazygit
 
     # LSP Servers
-    nodePackages_latest.pyright
+    #nodePackages_latest.pyright
+    pyright
     cmake-language-server
     clang
     vimPlugins.clangd_extensions-nvim
