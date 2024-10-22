@@ -41,6 +41,8 @@
     ansible-language-server
     nodePackages_latest.dockerfile-language-server-nodejs
     nodePackages.vim-language-server
+    nodePackages.typescript
+    nodePackages.typescript-language-server
     lua-language-server
   ];
 
