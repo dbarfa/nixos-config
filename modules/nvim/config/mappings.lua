@@ -1,5 +1,5 @@
 -- QOL
-vim.keymap.set("n", "<leader>ee", vim.cmd.Ex , { desc = '[ee] open netrw'} )
+vim.keymap.set("n", "<leader>ee", vim.cmd.Oil , { desc = '[ee] open Oil file tree'} )
 
 vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>LazyGit<cr>', { noremap = true, silent = true })
 

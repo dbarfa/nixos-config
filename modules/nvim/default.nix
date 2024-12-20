@@ -64,6 +64,11 @@ in {
           type = "lua";
         }
         {
+          plugin = pkgs.vimPlugins.oil-nvim;
+          config = builtins.readFile config/setup/oil.lua;
+          type = "lua";
+        }
+        {
           plugin = pkgs.vimPlugins.which-key-nvim;
           config = "require('which-key').setup()";
           type = "lua";
