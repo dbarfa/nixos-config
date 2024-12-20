@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [ (import ../modules) ];
@@ -6,6 +6,7 @@
   home.homeDirectory = "/home/dbarfa";
 
   home.packages = with pkgs; [
+    inputs.ghostty.packages.x86_64-linux.default
     ripgrep
     jq
     fzf
