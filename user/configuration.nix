@@ -26,7 +26,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
+    #extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
     xdgOpenUsePortal = true;
     wlr = { enable = true; };
   };
