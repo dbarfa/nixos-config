@@ -26,7 +26,6 @@
 
   xdg.portal = {
     enable = true;
-    #extraPortals = with pkgs; [ xdg-desktop-portal-kde ];
     xdgOpenUsePortal = true;
     wlr = { enable = true; };
   };
@@ -34,9 +33,19 @@
   environment.systemPackages = with pkgs; [ git wget neovim curl dig ];
 
   environment.variables.EDITOR = "nvim";
-
-  networking.networkmanager.enable = true;
-  networking.hostName = "dbarfa";
+  
+  networking = {
+    hostName = "dbarfa";
+    wireguard = {
+      enable = true;
+    };
+    networkmanager = {
+      enable = true;
+    }; 
+    firewall = {
+      checkReversePath = "loose";  
+    };
+  };
 
   time.timeZone = "Europe/Brussels";
   time.hardwareClockInLocalTime = true;

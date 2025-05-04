@@ -15,18 +15,19 @@
     htop
     mpv
     eza
-    # gcc
-    
-    pavucontrol
+
     xclip
     file
     which
     tree
     neofetch
 
-    nix-output-monitor
     brave
-    # calibre
+    protonvpn-gui
+    protonvpn-cli
+    pavucontrol
+
+    nix-output-monitor
     sysstat
     lm_sensors
     pciutils
@@ -37,6 +38,7 @@
     pyright
     cmake-language-server
     clang
+    #gcc
     vimPlugins.clangd_extensions-nvim
     nil
     rust-analyzer
