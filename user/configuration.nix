@@ -14,7 +14,7 @@
   };
 
   environment.localBinInPath = true;
-  programs.steam.enable = true;
+
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
   users.users.dbarfa = {
