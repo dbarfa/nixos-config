@@ -48,6 +48,18 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     lua-language-server
+
+
+    waybar
+    rofi-wayland
+    wl-clipboard
+    wl-clip-persist
+    cliphist
+    networkmanagerapplet
+    xdg-utils
+    grim
+    slurp
+    libnotify
   ];
 
   home.sessionVariables = {
