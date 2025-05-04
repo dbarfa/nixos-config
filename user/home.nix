@@ -6,7 +6,7 @@
   home.homeDirectory = "/home/dbarfa";
 
   home.packages = with pkgs; [
-    inputs.ghostty.packages.x86_64-linux.default
+    ghostty
     ripgrep
     jq
     fzf
@@ -16,7 +16,7 @@
     mpv
     eza
     # gcc
-
+    
     xclip
     file
     which
@@ -24,15 +24,15 @@
     neofetch
 
     nix-output-monitor
+    brave
     # calibre
     sysstat
     lm_sensors
     pciutils
     usbutils
     lazygit
-
+    
     # LSP Servers
-    #nodePackages_latest.pyright
     pyright
     cmake-language-server
     clang

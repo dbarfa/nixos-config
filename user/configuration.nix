@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./vmware/hardware-configuration.nix ];
+  imports = [ ./desktop/hardware-configuration.nix ];
 
   nixpkgs.config = { allowUnfree = true; };
 
@@ -75,30 +75,30 @@
     pulse.enable = true;
   };
 
-  # hardware.opengl = {
-  #   enable = true;
+  #   hardware.opengl = {
+  #  enable = true;
   #   driSupport = true;
   #   driSupport32Bit = true;
   # };
 
   virtualisation.vmware.guest.enable = true;
 
-  #services.xserver.videoDrivers = [ "nvidia" ];
-  #hardware.nvidia = {
-  #  modesetting.enable = true;
-  #
-  #    powerManagement.enable = false;
-  #    powerManagement.finegrained = false;
-  #
-  #    open = false;
-  #    nvidiaSettings = true;
-  #    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  #  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+  
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+  
+      open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
 
   boot = {
     loader = { systemd-boot.enable = true; };
     # remove nomodeset for vmware
-    #kernelParams = ["nomodeset"];
+    kernelParams = ["nomodeset"];
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
