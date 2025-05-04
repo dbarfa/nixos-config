@@ -17,6 +17,7 @@
     eza
     # gcc
     
+    pavucontrol
     xclip
     file
     which

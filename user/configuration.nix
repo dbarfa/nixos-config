@@ -65,7 +65,6 @@
 
   # services.printing.enable = true;
 
-  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -75,11 +74,6 @@
     pulse.enable = true;
   };
 
-  #   hardware.opengl = {
-  #  enable = true;
-  #   driSupport = true;
-  #   driSupport32Bit = true;
-  # };
 
   virtualisation.vmware.guest.enable = true;
 
@@ -98,7 +92,7 @@
   boot = {
     loader = { systemd-boot.enable = true; };
     # remove nomodeset for vmware
-    kernelParams = ["nomodeset"];
+    # kernelParams = ["nomodeset"];
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
