@@ -51,7 +51,7 @@
   };
   services.gnome.gnome-keyring.enable = true;
   networking = {
-    hostName = "dbarfa";
+    hostName = "dev";
     wireguard.enable = true;
     networkmanager.enable = true;
     firewall.checkReversePath = "loose";  
