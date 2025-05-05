@@ -16,7 +16,7 @@
       modesetting.enable = true;
       powerManagement.enable = false;
       powerManagement.finegrained = false;
-      open = true;
+      open = false;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
@@ -69,7 +69,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway --unsupported-gpu";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
         user = "dbarfa";
       };
 
@@ -105,7 +105,7 @@
 
   boot = {
     loader = { systemd-boot.enable = true; };
-    kernelParams = ["nomodeset" ];
+    kernelParams = [ ];
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
