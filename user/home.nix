@@ -21,7 +21,8 @@
     which
     tree
     neofetch
-
+    
+    stremio
     brave
     protonvpn-gui
     protonvpn-cli
