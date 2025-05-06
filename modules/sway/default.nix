@@ -22,13 +22,13 @@ in
           pos = "1920 0";
         };
       };
-      
+
       input = {
         "*" = {
           xkb_options = "ctrl:nocaps";
         };
       };
-      
+
       focus = {
         followMouse = false;
       };
@@ -49,11 +49,18 @@ in
         # rofi: dmenu
         #"${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun -monitor ${activeMonitor}";
         # rofi: clipboard
+
+        # audio keyboard volume knob
+        "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%+";
+        "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%-";
+        "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
       };
     };
 
-    # maybe - color, keybindings, volume knob kb, remove useless bar info
-
+    extraOptions = [
+      # nvidia gpu
+      "--unsupported-gpu"
+    ];
     extraConfig = ''
     '';
   };
