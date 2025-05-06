@@ -27,7 +27,7 @@
       enable = true;
       wrapperFeatures.gtk = true;
     };
-
+    steam.enable = true;
   };
   users.defaultUserShell = pkgs.fish;
   users.users.dbarfa = {
