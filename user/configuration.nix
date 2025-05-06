@@ -11,7 +11,6 @@
       enable = true;
       powerOnBoot = true;
     };
-    pulseaudio.enable = false;
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = false;
@@ -95,7 +94,11 @@
 
   # services.printing.enable = true;
 
-  security.polkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
