@@ -22,6 +22,7 @@
   };
   programs = {
     fish.enable = true;
+    thunar.enable = true;
     sway = {
       enable = true;
       wrapperFeatures.gtk = true;

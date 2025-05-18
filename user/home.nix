@@ -15,6 +15,7 @@
     htop
     mpv
     eza
+    qbittorrent
 
     xclip
     file
