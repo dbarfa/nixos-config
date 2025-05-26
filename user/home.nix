@@ -15,7 +15,6 @@
     htop
     mpv
     eza
-    qbittorrent
 
     xclip
     file
@@ -26,7 +25,7 @@
     stremio
     brave
     protonvpn-gui
-    protonvpn-cli
+    protonvpn-cli_2
     pavucontrol
 
     nix-output-monitor

@@ -11,7 +11,8 @@ in
     config = rec {
       modifier = "Mod1";
       terminal = "ghostty";
-      startup = [
+      startup = [ 
+        { command = "${pkgs.protonvpn-gui}/bin/protonvpn-app"; }
       ];
 
       output = {
