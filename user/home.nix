@@ -25,6 +25,7 @@
     stremio
     brave
     firefox
+    obs-studio
     protonvpn-gui
     protonvpn-cli_2
     pavucontrol
