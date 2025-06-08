@@ -24,6 +24,7 @@
     
     stremio
     brave
+    firefox
     protonvpn-gui
     protonvpn-cli_2
     pavucontrol
