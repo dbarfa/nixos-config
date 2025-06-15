@@ -21,7 +21,8 @@
     which
     tree
     neofetch
-    
+    unzip
+
     stremio
     brave
     firefox
