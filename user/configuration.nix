@@ -21,6 +21,7 @@
     };
   };
   programs = {
+    nix-ld.enable = true;
     fish.enable = true;
     thunar.enable = true;
     sway = {
@@ -43,7 +44,7 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [ git wget neovim curl dig grim slurp wl-clipboard mako ];
+    systemPackages = with pkgs; [ git wget neovim curl dig grim slurp wl-clipboard mako gamescope ];
     localBinInPath = true;
     variables = {
       EDITOR = "nvim";
