@@ -66,32 +66,32 @@
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "dbarfa";
-      };
-
-    }; 
-  };
+  #services.greetd = {
+  #  enable = true;
+  #  settings = {
+  #    default_session = {
+  #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+  #      user = "dbarfa";
+  #    };
+  #
+  #  }; 
+  #};
 
   services.xserver = {
-    enable = false;
-    #layout = "us";
-    #windowManager = { i3.enable = true; };
-    #displayManager = {
-    #  defaultSession = "none+i3";
-    #  lightdm.enable = true;
-    #};
-    #desktopManager = {
-    #  xterm.enable = false;
-    #  wallpaper.mode = "fill";
-    #};
+    enable = true;
+    layout = "us";
+    windowManager = { i3.enable = true; };
+    displayManager = {
+      defaultSession = "none+i3";
+      lightdm.enable = true;
+    };
+    desktopManager = {
+      xterm.enable = false;
+      wallpaper.mode = "fill";
+    };
     videoDrivers = [ "nvidia" ];
-    #xkbVariant = "";
-    #xkbOptions = "ctrl:nocaps";
+    xkbVariant = "";
+    xkbOptions = "ctrl:nocaps";
   };
 
   # services.printing.enable = true;
